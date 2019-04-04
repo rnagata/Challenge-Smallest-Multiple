@@ -8,7 +8,22 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  let numberToBeDivided = 1;
+  let smallestNumber;
+  let noRemainders = false;
+  
+  while (!noRemainders){
+    for (i = 1; i <= ceiling; i++){
+      if (numberToBeDivided % i !== 0){
+        break;
+      }
+      if (i === ceiling){
+        smallestNumber = numberToBeDivided;
+        noRemainders = true;
+      }
+    }
+    numberToBeDivided++;
+  }
 
-
-  return 0;
+  return smallestNumber;
 };
